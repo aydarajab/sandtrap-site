@@ -5,16 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Sand Trap Bar &amp; Sim — Coming Soon</title>
   <meta name="description" content="The Sand Trap Bar &amp; Sim — a modern golf simulator bar opening soon in Miami, FL.">
-  <!-- Favicon (optional) -->
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Consistency tweaks */
     *,*::before,*::after { box-sizing: border-box; }
     img { display: block; max-width: 100%; height: auto; }
     html, body { height: 100%; }
@@ -30,8 +26,8 @@
     }
     body {
       background:
-        radial-gradient(1200px 600px at 20% -20%, rgba(56,189,248,.35), transparent),
-        radial-gradient(1000px 520px at 110% 20%, rgba(185,255,232,.25), transparent),
+        radial-gradient(800px 400px at 20% -20%, rgba(56,189,248,.35), transparent),
+        radial-gradient(700px 360px at 110% 20%, rgba(185,255,232,.25), transparent),
         linear-gradient(180deg, #0b1120, #0b1220 60%, #0a0f1b);
       color: #e8f0ff;
       font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -41,7 +37,6 @@
       border: 1px solid rgba(255,255,255,.12);
       backdrop-filter: blur(10px);
     }
-    /* fallback if backdrop-filter unsupported */
     @supports not (backdrop-filter: blur(10px)) {
       .glass { background: rgba(255,255,255,.05); }
     }
@@ -55,21 +50,28 @@
     .marquee span { animation: slide 28s linear infinite; }
     @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     input::placeholder { color: #94a3b8; }
+
+    /* Mobile tune-ups */
+    @media (max-width: 640px) {
+      h1 { font-size: 1.9rem; line-height: 1.2; }
+      .glass { padding: 1.1rem; }
+      nav { padding: 0.5rem 0.75rem !important; }
+    }
   </style>
 </head>
 <body>
   <!-- hero -->
   <header class="relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-cyan-500/10 blur-3xl"></div>
-      <div class="absolute -bottom-40 -right-20 w-[32rem] h-[32rem] rounded-full bg-emerald-300/10 blur-3xl"></div>
+      <!-- smaller on mobile, scale up responsively -->
+      <div class="absolute -top-32 -left-32 w-[14rem] h-[14rem] sm:w-[20rem] sm:h-[20rem] md:w-[28rem] md:h-[28rem] rounded-full bg-cyan-500/10 blur-3xl"></div>
+      <div class="absolute -bottom-40 -right-20 w-[16rem] h-[16rem] sm:w-[24rem] sm:h-[24rem] md:w-[32rem] md:h-[32rem] rounded-full bg-emerald-300/10 blur-3xl"></div>
     </div>
 
-    <nav class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <!-- Use your real file in ./assets -->
-        <img src="assets/Image.jpg" alt="The Sand Trap logo" class="w-12 h-12 rounded-full ring-2 ring-white/10 ringy object-cover bg-[#f2e9d0]" />
-        <span class="font-extrabold tracking-wide">THE SAND TRAP</span>
+        <img src="assets/Image.jpg" alt="The Sand Trap logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full ring-2 ring-white/10 ringy object-cover bg-[#f2e9d0]" />
+        <span class="text-sm sm:text-base font-extrabold tracking-wide">THE SAND TRAP</span>
       </div>
       <div class="hidden md:flex items-center gap-6 text-sm text-slate-300">
         <a href="#about" class="hover:text-white">About</a>
@@ -78,106 +80,104 @@
       </div>
     </nav>
 
-    <div class="max-w-6xl mx-auto px-6 pb-16 pt-6 md:pt-10">
-      <div class="grid md:grid-cols-2 items-center gap-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pb-14 pt-4 sm:pt-6 md:pt-10">
+      <div class="grid md:grid-cols-2 items-center gap-8 md:gap-10">
         <div>
-          <p class="uppercase tracking-widest text-cyan-300/80 text-xs md:text-sm mb-4">Miami, Florida • Golf Sim + Cocktail Bar</p>
-          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          <p class="uppercase tracking-widest text-cyan-300/80 text-[11px] sm:text-xs md:text-sm mb-3 sm:mb-4">Miami, Florida • Golf Sim + Cocktail Bar</p>
+          <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
             A <span class="accent-text">modern</span> golf simulator bar<br/>where vibes meet <span class="accent-text">birdies</span>.
           </h1>
-          <p class="text-slate-300 mt-5 max-w-prose">
+          <p class="text-slate-300 mt-4 sm:mt-5 max-w-prose text-sm sm:text-base">
             Swing year-round on elite sims, sip craft cocktails, and hang with your crew.
             <span class="font-semibold text-white">The Sand Trap Bar &amp; Sim</span> is opening soon in Miami.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 mt-8">
-            <a href="#notify" class="btn inline-flex items-center justify-center rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-900">
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
+            <a href="#notify" class="btn inline-flex items-center justify-center rounded-xl bg-cyan-500 px-5 py-3 font-semibold text-slate-900 text-sm sm:text-base">
               Get launch updates
             </a>
-            <a href="#features" class="btn inline-flex items-center justify-center rounded-xl glass px-6 py-3 font-semibold text-white">
+            <a href="#features" class="btn inline-flex items-center justify-center rounded-xl glass px-5 py-3 font-semibold text-white text-sm sm:text-base">
               Explore what’s inside
             </a>
           </div>
 
-          <div class="marquee mt-10 overflow-hidden whitespace-nowrap text-slate-400/80">
+          <div class="marquee mt-8 sm:mt-10 overflow-hidden whitespace-nowrap text-slate-400/80 text-xs sm:text-sm">
             <span class="inline-block min-w-full md:min-w-[50%]">
               • TrackMan-style accuracy • Signature cocktails • Leagues &amp; events • VIP bays • Late-night menu • Private parties
             </span>
           </div>
         </div>
 
-        <div class="relative">
-          <div class="glass rounded-3xl p-6 md:p-8">
-            <!-- Use your real file in ./assets -->
-            <img src="assets/Image.jpg" alt="The Sand Trap hero image" class="w-full rounded-2xl bg-[#f2e9d0] object-contain" />
-            <div class="grid grid-cols-3 gap-4 mt-6">
-              <div class="rounded-2xl glass p-4 text-center">
-                <div class="text-2xl font-extrabold">4</div>
-                <div class="text-xs uppercase tracking-widest text-slate-400">Pro Bays</div>
+        <div class="relative mt-6 md:mt-0">
+          <div class="glass rounded-3xl p-4 sm:p-6 md:p-8">
+            <img src="assets/Image.jpg" alt="The Sand Trap hero image" class="w-full rounded-2xl bg-[#f2e9d0] object-cover aspect-[16/10]" />
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 mt-4 sm:mt-6">
+              <div class="rounded-2xl glass p-3 sm:p-4 text-center">
+                <div class="text-xl sm:text-2xl font-extrabold">4</div>
+                <div class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400">Pro Bays</div>
               </div>
-              <div class="rounded-2xl glass p-4 text-center">
-                <div class="text-2xl font-extrabold">Full</div>
-                <div class="text-xs uppercase tracking-widest text-slate-400">Cocktail Bar</div>
+              <div class="rounded-2xl glass p-3 sm:p-4 text-center">
+                <div class="text-xl sm:text-2xl font-extrabold">Full</div>
+                <div class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400">Cocktail Bar</div>
               </div>
-              <div class="rounded-2xl glass p-4 text-center">
-                <div class="text-2xl font-extrabold">Late</div>
-                <div class="text-xs uppercase tracking-widest text-slate-400">Night Bites</div>
+              <div class="rounded-2xl glass p-3 sm:p-4 text-center">
+                <div class="text-xl sm:text-2xl font-extrabold">Late</div>
+                <div class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400">Night Bites</div>
               </div>
             </div>
           </div>
-          <p class="text-center text-xs text-slate-400 mt-3">Illustrative specs — final opening details coming soon.</p>
+          <p class="text-center text-[11px] sm:text-xs text-slate-400 mt-2 sm:mt-3">Illustrative specs — final opening details coming soon.</p>
         </div>
       </div>
     </div>
   </header>
 
   <!-- features -->
-  <section id="features" class="max-w-6xl mx-auto px-6 py-16 md:py-24">
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="rounded-3xl glass p-6 md:p-8">
-        <h3 class="text-xl font-bold mb-2">Next-Gen Simulators</h3>
-        <p class="text-slate-300">Play world-class courses with pinpoint shot data, club metrics, and multi-sport modes.</p>
+  <section id="features" class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+    <div class="grid md:grid-cols-3 gap-4 sm:gap-6">
+      <div class="rounded-3xl glass p-5 sm:p-6 md:p-8">
+        <h3 class="text-lg sm:text-xl font-bold mb-2">Next-Gen Simulators</h3>
+        <p class="text-slate-300 text-sm sm:text-base">Play world-class courses with pinpoint shot data, club metrics, and multi-sport modes.</p>
       </div>
-      <div class="rounded-3xl glass p-6 md:p-8">
-        <h3 class="text-xl font-bold mb-2">Craft Cocktails</h3>
-        <p class="text-slate-300">Fresh flavors inspired by Miami: citrus, mint, and a little sand-bar swagger.</p>
+      <div class="rounded-3xl glass p-5 sm:p-6 md:p-8">
+        <h3 class="text-lg sm:text-xl font-bold mb-2">Craft Cocktails</h3>
+        <p class="text-slate-300 text-sm sm:text-base">Fresh flavors inspired by Miami: citrus, mint, and a little sand-bar swagger.</p>
       </div>
-      <div class="rounded-3xl glass p-6 md:p-8">
-        <h3 class="text-xl font-bold mb-2">Leagues &amp; Events</h3>
-        <p class="text-slate-300">Weekly leagues, tournaments, watch-parties, and private bays for your crew.</p>
+      <div class="rounded-3xl glass p-5 sm:p-6 md:p-8">
+        <h3 class="text-lg sm:text-xl font-bold mb-2">Leagues &amp; Events</h3>
+        <p class="text-slate-300 text-sm sm:text-base">Weekly leagues, tournaments, watch-parties, and private bays for your crew.</p>
       </div>
     </div>
   </section>
 
   <!-- signup -->
-  <section id="notify" class="max-w-3xl mx-auto px-6 pb-20">
-    <div class="rounded-3xl glass p-6 md:p-10 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Be first to know</h2>
-      <p class="text-slate-300 mb-6">Drop your email for opening day, early bookings, and special invites.</p>
-      <!-- Replace with your real Formspree ID -->
+  <section id="notify" class="max-w-3xl mx-auto px-4 sm:px-6 pb-16">
+    <div class="rounded-3xl glass p-5 sm:p-8 md:p-10 text-center">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2 sm:mb-3">Be first to know</h2>
+      <p class="text-slate-300 mb-4 sm:mb-6 text-sm sm:text-base">Drop your email for opening day, early bookings, and special invites.</p>
       <form class="flex flex-col sm:flex-row gap-3 justify-center" action="https://formspree.io/f/your-id" method="POST">
         <input required type="email" name="email" placeholder="you@example.com" class="w-full sm:w-96 rounded-xl bg-white/10 border border-white/15 px-4 py-3 outline-none focus:border-cyan-400" />
         <button class="btn rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-slate-900" type="submit">Notify me</button>
       </form>
-      <p class="text-xs text-slate-400 mt-3">We’ll only email about The Sand Trap. No spam, ever.</p>
+      <p class="text-[11px] sm:text-xs text-slate-400 mt-3">We’ll only email about The Sand Trap. No spam, ever.</p>
     </div>
   </section>
 
   <!-- contact -->
-  <section id="contact" class="max-w-6xl mx-auto px-6 pb-24">
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="rounded-3xl glass p-6 md:p-8">
-        <h3 class="text-xl font-bold mb-2">Location</h3>
-        <p class="text-slate-300">Miami, FL — exact spot TBA.</p>
-        <div class="mt-4 rounded-2xl overflow-hidden bg-slate-900/50 aspect-[16/10] flex items-center justify-center text-slate-500 text-sm">
+  <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 pb-20 md:pb-24">
+    <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
+      <div class="rounded-3xl glass p-5 sm:p-6 md:p-8">
+        <h3 class="text-lg sm:text-xl font-bold mb-2">Location</h3>
+        <p class="text-slate-300 text-sm sm:text-base">Miami, FL — exact spot TBA.</p>
+        <div class="mt-4 rounded-2xl overflow-hidden bg-slate-900/50 aspect-[16/10] flex items-center justify-center text-slate-500 text-xs sm:text-sm">
           Map coming soon
         </div>
       </div>
-      <div class="rounded-3xl glass p-6 md:p-8">
-        <h3 class="text-xl font-bold mb-2">Say hello</h3>
-        <p class="text-slate-300">Partnerships, private events, or press? We’d love to chat.</p>
+      <div class="rounded-3xl glass p-5 sm:p-6 md:p-8">
+        <h3 class="text-lg sm:text-xl font-bold mb-2">Say hello</h3>
+        <p class="text-slate-300 text-sm sm:text-base">Partnerships, private events, or press? We’d love to chat.</p>
         <div class="mt-4 space-y-3">
           <a class="block hover:underline" href="mailto:hello@sandtrapmiami.com">hello@sandtrapmiami.com</a>
-          <div class="flex gap-4 text-slate-300">
+          <div class="flex gap-4 text-slate-300 text-sm">
             <a class="hover:text-white" href="#" aria-label="Instagram">Instagram</a>
             <a class="hover:text-white" href="#" aria-label="TikTok">TikTok</a>
             <a class="hover:text-white" href="#" aria-label="Facebook">Facebook</a>
@@ -187,7 +187,7 @@
     </div>
   </section>
 
-  <footer class="text-center text-xs text-slate-400 pb-10">
+  <footer class="text-center text-[11px] sm:text-xs text-slate-400 pb-8 md:pb-10">
     © <span id="year"></span> The Sand Trap Bar &amp; Sim · Miami, FL
   </footer>
 
